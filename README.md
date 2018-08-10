@@ -1,5 +1,5 @@
 <p align="center">
-<img width="200px" src="/docs/img/header.svg" align="middle"/>
+<img width="200px" src="/static/images/MAD_EPSILON_STACKED.svg" align="middle"/>
 </p>
 
 # GHD

@@ -1,8 +1,8 @@
 <p align="center">
-<img width="200px" src="/static/images/MAD_EPSILON_STACKED.svg" align="middle"/>
+<img width="500px" src="/static/images/MAD_EPSILON_STACKED.svg" align="middle"/>
 </p>
 
-# GHD
+# ME
 Your project’s name is the first thing people will see upon scrolling down to your README, and is included upon creation of your README file.
 
 ## Description

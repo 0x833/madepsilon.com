@@ -1,4 +1,4 @@
-title = "MAD EPSILON 2018"
+title = "MAD EPSILON"
 baseURL = ""
 tags = ["portfolio", "web design", "blog"]
 languageCode = "en-US"
@@ -11,7 +11,7 @@ disableKinds = ["taxonomy", "taxonomyTerm"] # This theme does not currently use 
 
 [Params]
     tagline = "$ git help everyday"
-    author = "ERICK MEYER"
+    author = "MAD EPSILON LLC"
     description = "Developer "
     logoBig = "/images/MAD_EPSILON_STACKED.svg"
     logoSmall = "/images/MAD_EPSILON_STACKED.svg"
@@ -40,8 +40,8 @@ disableKinds = ["taxonomy", "taxonomyTerm"] # This theme does not currently use 
     url  = "/#work"
     weight = 2
 [[menu.main]]
-    name = "Blog"
-    url  = "/#blog"
+    name = "ARTICLES"
+    url  = "/#articles"
     weight = 3
 [[menu.main]]
     name = "Contact"

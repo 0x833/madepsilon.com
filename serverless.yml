@@ -55,7 +55,9 @@ iamRoleStatements:
 #    variable1: value1
 
 # you can add packaging information here
-#package:
+package:
+  individually: true
+
 #  include:
 #    - include-me.js
 #    - include-me-dir/**
@@ -102,10 +104,19 @@ functions:
 
 # you can add CloudFormation resource templates here
 Resources:
-   WebserverBucket:
-     Type: AWS::S3::Bucket
-     Properties:
-       BucketName: madepsilon-web
+  WebserverBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: madepsilon-web
+  MadEpsilonBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: www.madepsilon.com
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: 404.html
+
 Outputs:
   WebsiteUrl:
     Description: "S3 Bucket website URL"

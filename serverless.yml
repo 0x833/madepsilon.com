@@ -101,13 +101,12 @@ functions:
 #      variable2: value2
 
 # you can add CloudFormation resource templates here
-resources:
- Resources:
+Resources:
    WebserverBucket:
      Type: AWS::S3::Bucket
      Properties:
        BucketName: madepsilon-web
-#  Outputs:
-#     NewOutput:
-#       Description: "Description for the output"
-#       Value: "Some output value"
+Outputs:
+  WebsiteUrl:
+    Description: "S3 Bucket website URL"
+    Value: !GetAtt WebserverBucket.WebsiteURL

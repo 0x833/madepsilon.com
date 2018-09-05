@@ -11,7 +11,7 @@
 #
 # Happy Coding!
 
-service: aws-nodejs # NOTE: update this with your service name
+service: madepsilon-site # NOTE: update this with your service name
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
@@ -25,23 +25,29 @@ provider:
 
 # you can overwrite defaults here
 #  stage: dev
-#  region: us-east-1
+  region: us-west-2
 
 # you can add statements to the Lambda function's IAM Role here
-#  iamRoleStatements:
-#    - Effect: "Allow"
-#      Action:
-#        - "s3:ListBucket"
-#      Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
-#    - Effect: "Allow"
-#      Action:
-#        - "s3:PutObject"
-#      Resource:
-#        Fn::Join:
-#          - ""
-#          - - "arn:aws:s3:::"
-#            - "Ref" : "ServerlessDeploymentBucket"
-#            - "/*"
+iamRoleStatements:
+  - Effect: "Allow"
+    Action:
+      - "s3:ListBucket"
+    Resource: { 
+      "Fn::Join" : [
+        "", [
+          "arn:aws:s3:::", 
+          { "Ref" : "WebserverBucket" } 
+          ] 
+    ]}
+  - Effect: "Allow"
+    Action:
+      - "s3:PutObject"
+    Resource:
+      Fn::Join:
+        - ""
+        - - "arn:aws:s3:::"
+          - "Ref" : "WebserverBucket"
+          - "/*"
 
 # you can define service wide environment variables here
 #  environment:
@@ -94,13 +100,13 @@ functions:
 #      variable2: value2
 
 # you can add CloudFormation resource templates here
-#resources:
-#  Resources:
-#    NewResource:
-#      Type: AWS::S3::Bucket
-#      Properties:
-#        BucketName: my-new-bucket
-#  Outputs:
-#     NewOutput:
-#       Description: "Description for the output"
-#       Value: "Some output value"
+Resources:
+   WebserverBucket:
+     Type: AWS::S3::Bucket
+     Properties:
+       BucketName: madepsilon-web
+Outputs:
+  WebsiteUrl:
+    Description: "S3 Bucket website URL"
+    Value: 
+      Fn:GetAtt: [WebserverBucket, WebsiteURL]

@@ -7,8 +7,10 @@ cache:
 before_install:
   - wget https://github.com/gohugoio/hugo/releases/download/v0.48/hugo_0.48_Linux-64bit.deb 
   - sudo dpkg -i hugo_0.48_Linux-64bit.deb
+  - pip install awscli --upgrade --user
 script:
     - hugo
     - find . ! -name 'public' -type d -exec rm -rf {} + 
     - npm install -g serverless@1.30.1
     - sls deploy -v -s ${TRAVIS_BRANCH}
+    - aws s3 cp public s3://www.madepsilon.com

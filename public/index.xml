@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MAD EPSILON</title>
+    <link>/</link>
+    <description>Recent content on MAD EPSILON</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 09 Aug 2018 21:11:36 -0700</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ABOUT</title>
+      <link>/about/</link>
+      <pubDate>Thu, 09 Aug 2018 21:11:36 -0700</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Hard work never goes unnoticed
+ After one of my first work experiences, I was told this. To this day it is a reminder that working towards a goal will be worth it in the end, as long as you work hard to make it a reality. Even if the goal was far reaching, you&amp;rsquo;ll be surprised as to how far you are able to push yourself.</description>
+    </item>
+    
+  </channel>
+</rss>

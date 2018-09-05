@@ -109,4 +109,5 @@ Resources:
 Outputs:
   WebsiteUrl:
     Description: "S3 Bucket website URL"
-    Value: !GetAtt WebserverBucket.WebsiteURL
+    Value: 
+      Fn:GetAtt: [WebserverBucket, WebsiteURL]

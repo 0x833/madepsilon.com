@@ -2,7 +2,7 @@
 <img width="500px" src="/static/images/MAD_EPSILON_STACKED.svg" align="middle"/>
 </p>
 
-[![Build Status](https://travis-ci.org/madepsilon/me.svg?branch=master)](https://travis-ci.org/madepsilon/me)
+[![Build Status](https://travis-ci.org/madepsilon/madepsilon.com.svg?branch=master)](https://travis-ci.org/madepsilon/madepsilon.com)
 
 # ME
 Your project’s name is the first thing people will see upon scrolling down to your README, and is included upon creation of your README file.

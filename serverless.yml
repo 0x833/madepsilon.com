@@ -21,24 +21,23 @@ tenant: madepsilon
 
 provider:
   name: aws
-  runtime: golang1.X
-
-# you can overwrite defaults here
-#  stage: dev
   region: us-west-2
+  stage: ${opt:stage, "dev"}
+  runtime: go1.x
+
+#  environment:
+#    variable1: value1
 
 # you can add statements to the Lambda function's IAM Role here
 iamRoleStatements:
   - Effect: "Allow"
     Action:
       - "s3:ListBucket"
-    Resource: { 
-      "Fn::Join" : [
-        "", [
-          "arn:aws:s3:::", 
-          { "Ref" : "WebserverBucket" } 
-          ] 
-    ]}
+    Resource:
+    - "Fn::Join":
+      - ""
+      - - "arn:aws:s3:::",
+        - Ref: "WebserverBucket"
   - Effect: "Allow"
     Action:
       - "s3:PutObject"
@@ -46,12 +45,10 @@ iamRoleStatements:
       Fn::Join:
         - ""
         - - "arn:aws:s3:::"
-          - "Ref" : "WebserverBucket"
+          - Ref: "WebserverBucket"
           - "/*"
 
 # you can define service wide environment variables here
-#  environment:
-#    variable1: value1
 
 # you can add packaging information here
 #package:

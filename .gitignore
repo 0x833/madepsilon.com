@@ -5,3 +5,9 @@ public
 
 # Serverless directories
 .serverless
+
+# Idea Directories
+.Idea
+
+# OSX Directories
+.DS_Store

@@ -1,4 +1,4 @@
-service: madepsilonDotcom # NOTE: update this with your service name
+service: madepsiloncom # NOTE: update this with your service name
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
@@ -54,9 +54,19 @@ Resources:
    WebserverBucket:
      Type: AWS::S3::Bucket
      Properties:
-       BucketName: ${self:service}
+       BucketName: ${self:service}-${self:stage}
+       AccessControl: PublicRead
+       WebsiteConfiguration:
+         ErrorDocument: String
+         IndexDocument: String
+         RedirectAllRequestsTo:
+           Redirect all requests rule
+         RoutingRules:
+           - Routing rule
 Outputs:
   WebsiteUrl:
     Description: "S3 Bucket website URL"
     Value: 
-      Fn:GetAtt: [WebserverBucket, WebsiteURL]
+      "Fn:GetAtt":
+      - WebserverBucket
+      - WebsiteURL

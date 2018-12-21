@@ -1,4 +1,4 @@
-service: madepsiloncom # NOTE: update this with your service name
+service: mad-epsilon-dot-com # NOTE: update this with your service name
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
@@ -58,7 +58,7 @@ Resources:
        AccessControl: PublicRead
        WebsiteConfiguration:
          ErrorDocument: String
-         IndexDocument: String
+         IndexDocument: index.html
          RedirectAllRequestsTo:
            Redirect all requests rule
          RoutingRules:

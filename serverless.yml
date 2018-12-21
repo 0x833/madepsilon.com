@@ -23,7 +23,7 @@ iamRoleStatements:
     - "Fn::Join":
       - ""
       - - "arn:aws:s3:::"
-        - Ref: "WebserverBucket"
+        - Ref: WebserverBucket
   - Effect: "Allow"
     Action:
       - "s3:PutObject"
@@ -31,7 +31,7 @@ iamRoleStatements:
       Fn::Join:
         - ""
         - - "arn:aws:s3:::"
-          - Ref: "WebserverBucket"
+          - Ref: WebserverBucket
           - "/*"
 
 # you can define service wide environment variables here
@@ -45,9 +45,9 @@ iamRoleStatements:
 #    - exclude-me.js
 #    - exclude-me-dir/**
 
-functions:
-  hello:
-    handler: handler.hello
+#functions:
+#  hello:
+#    handler: handler.hello
 
 # you can add CloudFormation resource templates here
 Resources:
